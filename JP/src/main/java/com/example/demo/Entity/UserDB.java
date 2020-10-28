@@ -13,4 +13,13 @@ public class UserDB {
     @Id
     @Column
     private Long id;
+    @Column
+    private String name;
+    @Column
+    private String password;
+    @Column
+    private String email;
+    @Column
+    private String teams;
+
 }
