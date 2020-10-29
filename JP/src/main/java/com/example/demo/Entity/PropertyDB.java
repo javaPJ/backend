@@ -6,24 +6,26 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Data
 @Entity
+@Table(name = "Property")
 public class PropertyDB {
     @Id
     @Column
     private Long id;
-    @Column
+    @Column(nullable = false, unique = true, length = 30)
     private String team;
-    @Column
+    @Column(nullable = false, unique = true, length = 50)
     private String s_date;
-    @Column
+    @Column(nullable = false, unique = true, length = 50)
     private String f_date;
-    @Column
+    @Column(nullable = false, unique = true, length = 30)
     private String title;
-    @Column
+    @Column(nullable = false, unique = true, length = 30)
     private String contents;
-    @Column
+    @Column(nullable = false, unique = true, length = 30)
     private String date;
     @Column
     private Long index;
