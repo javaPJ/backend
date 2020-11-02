@@ -15,9 +15,9 @@ public class AuthController {
     @Autowired
     private AccountRepository accountRepository;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String login(UserDB userDB){
         userDB.setRegDate(new Date());
-        return "redirect:/post/" + accountRepository.save(userDB).getClass();
+        return "redirect:/auth/signup" + accountRepository.save(userDB).getClass();
     }
 }
