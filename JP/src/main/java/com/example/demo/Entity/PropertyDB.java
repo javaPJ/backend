@@ -1,32 +1,28 @@
 package com.example.demo.Entity;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "Property")
 public class PropertyDB {
     @Id
+    @GeneratedValue
+    @Column(nullable = false, unique = true)
+    private Long idx;
     @Column
-    private Long id;
-    @Column(nullable = false, unique = true, length = 30)
-    private String team;
-    @Column(nullable = false, unique = true, length = 50)
-    private String s_date;
-    @Column(nullable = false, unique = true, length = 50)
-    private String f_date;
-    @Column(nullable = false, unique = true, length = 30)
     private String title;
-    @Column(nullable = false, unique = true, length = 30)
-    private String contents;
-    @Column(nullable = false, unique = true, length = 30)
-    private String date;
     @Column
-    private Long index;
+    private String contents;
+    @Column
+    private String s_date;
+    @Column
+    private String f_date;
+    @Column
+    private String color;
+    @Column
+    private String c_date;
 }
