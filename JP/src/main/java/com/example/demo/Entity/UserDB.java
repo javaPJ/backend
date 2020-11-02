@@ -1,17 +1,15 @@
 package com.example.demo.Entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
 public class UserDB {
     @Id
-    @Column
+    @Column(nullable = false, unique = true)
     private Long id;
     @Column
     private String name;
@@ -22,4 +20,12 @@ public class UserDB {
     @Column
     private String teams;
 
+    Date regDate;
+
+    public void setRegDate(Date date) {
+        regDate = date;
+    }
+    public Long getId(){
+        return id;
+    }
 }
